@@ -5,7 +5,7 @@
 
 var path = require('path');
 
-var radclient = require('..');
+var radclient = require('../index');
 var radserver = require('./server');
 
 var noop = function() {};

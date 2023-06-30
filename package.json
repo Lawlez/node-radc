@@ -2,13 +2,15 @@
   "name": "node-radc",
   "version": "1.0.0",
   "description": "Send packets to a RADIUS server and show reply",
-  "main": "index.js",
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/Protect7/dfeg-poc-node-radc"
   },
   "scripts": {
-    "test": "jest ./test/radius.test.js"
+    "test": "jest ./src/test/radius.test.js",
+    "verify": "prettier --check ./src/*.js || exit 0",
+    "format": "prettier --write ./*.js"
   },
   "author": "Michele Pangrazzi <xmikex83@gmail.com>",
   "license": "MIT",
@@ -17,6 +19,7 @@
     "radius": "^1.1.4"
   },
   "devDependencies": {
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8"
   }
 }
