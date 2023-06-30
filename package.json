@@ -1,24 +1,24 @@
 {
-  "name": "radclient",
+  "name": "node-radc",
   "version": "1.0.0",
   "description": "Send packets to a RADIUS server and show reply",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mpangrazzi/node-radclient.git"
+    "url": "git://github.com/Protect7/dfeg-poc-node-radc"
   },
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha -t 10000"
+    "test": "./node_modules/.bin/mocha -t 10000"
   },
   "author": "Michele Pangrazzi <xmikex83@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.1.2",
-    "radius": "^1.1.0"
+    "debug": "^2.2.0",
+    "radius": "^1.1.4"
   },
   "devDependencies": {
     "colors": "^1.0.3",
-    "mocha": "^2.2.1",
+    "mocha": "^2.5.3",
     "should": "^5.2.0"
   }
 }
