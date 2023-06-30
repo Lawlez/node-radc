@@ -1,5 +1,7 @@
-radclient
+# node-radc
 ============
+
+Proof of Concept for a simple radius client which could be used for pentesting.
 
 Send packets to a [RADIUS](http://en.wikipedia.org/wiki/RADIUS) server and show reply.
 
@@ -67,7 +69,7 @@ radclient(packet, options, function(err, response) {
 ## Test
 
 ```bash
-npm test
+yarn test
 ```
 
 ## Debug
@@ -83,6 +85,8 @@ DEBUG=radclient* node examples/simple
 ```
 
 ## License
+
+Original Code by Michele Pangrazzi
 
 The MIT License (MIT)
 
