@@ -4,7 +4,6 @@
  */
 
 var radclient = require('..');
-var colors = require('colors');
 var path = require('path');
 
 function random(begin, end) {
