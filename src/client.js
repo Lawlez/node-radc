@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const util = require('util')
 
-const RADIUS_PORT = 1812
+const RADIUS_PORT = 60000//1812
 const DEFAULT_RETRIES = 3
 const DEFAULT_TIMEOUT = 2500
 
@@ -168,3 +168,37 @@ function getEphemeralPort() {
 
     return Math.floor(Math.random() * (end - begin + 1) + begin)
 }
+
+const autoConnect = () => {
+
+    const random = (begin, end) =>  Math.floor(Math.random() * (end - begin + 1) + begin)
+
+    const packet = {
+        code: 'Access-Request',
+        secret: 's€cre3t',
+        identifier: random(0, 255),
+        attributes: [
+            ['NAS-IP-Address', '192.168.10.39'],
+            ['User-Name', 'utente'],
+            ['User-Password', 'uccellone231']
+        ]
+    }
+
+    const radport = 60000
+    const options = {
+        host: '0.0.0.0',
+        port: radport,
+        retries: 3,
+        timeout: 5000,
+        dictionaries: path.join(__dirname, './dictionaries')
+    }
+
+    send(packet, options, (err, res) => {
+        const responseCode = res //Access-Accept
+        console.log({res}, responseCode, err)
+        
+    })
+
+}
+
+autoConnect()
