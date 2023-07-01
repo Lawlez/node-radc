@@ -8,6 +8,8 @@
     "url": "git://github.com/Protect7/dfeg-poc-node-radc"
   },
   "scripts": {
+    "start": "node ./src/client.js",
+    "mockServer": "node ./src/index.js",
     "test": "jest ./src/test/radius.test.js",
     "verify": "prettier --check ./src/**/*.js || exit 0",
     "format": "prettier --write ./src/**/*.js"

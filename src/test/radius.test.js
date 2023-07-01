@@ -4,8 +4,8 @@
 
 var path = require('path')
 
-var radclient = require('../index')
-var radserver = require('./server')
+var radclient = require('../client')
+var radserver = require('../serverMock')
 
 var noop = function () {}
 var radport = 60000

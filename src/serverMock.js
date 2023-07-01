@@ -3,14 +3,13 @@
  */
 
 var dgram = require('dgram')
-var debug = require('debug')('radclient:test-server')
 var radius = require('radius')
 var socket = dgram.createSocket('udp4')
 var path = require('path')
 
 var radsecret = 's€cre3t'
 
-radius.add_dictionary(path.join(__dirname, '../dictionaries'))
+radius.add_dictionary(path.join(__dirname, './dictionaries'))
 
 // This a fake RADIUS server used for tests
 
@@ -21,7 +20,7 @@ exports.bind = function (port, host, callback) {
             secret: radsecret
         })
 
-        debug('RADIUS server received message', packet)
+        console.log('RADIUS server received message', packet)
 
         var response = radius.encode_response({
             packet: packet,
@@ -49,13 +48,13 @@ exports.bind = function (port, host, callback) {
             rinfo.port,
             rinfo.address,
             function (err, bytes) {
-                debug('RADIUS server answered')
+                console.log('RADIUS server answered')
             }
         )
     })
 
     socket.on('listening', function () {
-        debug('RADIUS server listening on port %s', port)
+        console.log('RADIUS server listening on port %s', port)
         callback()
     })
 
