@@ -3,7 +3,5 @@
     "tabWidth": 4,
     "semi": false,
     "singleQuote": true,
-    "xmlSelfClosingSpace": true,
     "bracketSameLine": false,
-    "xmlWhitespaceSensitivity": "ignore"
   }
