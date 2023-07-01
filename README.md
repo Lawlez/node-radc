@@ -3,13 +3,13 @@
 
 Proof of Concept for a simple radius client which could be used for pentesting.
 
-Send packets to a [RADIUS](http://en.wikipedia.org/wiki/RADIUS) server and show reply.
+Send packets to a [RADIUS](http://en.wikipedia.org/wiki/RADIUS) server and parse reply.
 
 This is a porting of [radclient](http://freeradius.org/radiusd/man/radclient.xhtml) utility to [node.js](http://nodejs.org), built on top of [node-radius](https://github.com/retailnext/node-radius) module.
 
 ## Examples
 
-See `/examples` folder. But basically:
+See `/src/examples` folder. But basically:
 
 ```js
 
@@ -72,24 +72,13 @@ radclient(packet, options, function(err, response) {
 yarn test
 ```
 
-## Debug
-
-This library is builded with [debug](https://github.com/visionmedia/debug) module.
-
-If you want to see what's going on under the hood, simply prepend `DEBUG=radclient*` to your script execution.
-
-With the provided example, you can simply do:
-
-```bash
-DEBUG=radclient* node examples/simple
-```
-
 ## License
 
 Original Code by Michele Pangrazzi
 
 The MIT License (MIT)
 
+Copyright (c) 2023 Dominik Feger
 Copyright (c) 2015 Michele Pangrazzi <<xmikex83@gmail.com>>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
