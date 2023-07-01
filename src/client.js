@@ -146,7 +146,7 @@ function send(packet, options, callback) {
     try {
         var encPacket = radius.encode(packet)
     } catch (e) {
-        console.error('Failed to encode packet', e)
+        console.log('Failed to encode packet', e)
         return callback(e)
     }
 
